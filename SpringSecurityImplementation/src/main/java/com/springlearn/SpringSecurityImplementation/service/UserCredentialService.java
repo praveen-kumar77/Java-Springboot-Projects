@@ -30,7 +30,7 @@ public class UserCredentialService implements UserDetailsService {
         UserCredentials user = userRepo.findByName(username);
 
         if(user == null){
-            System.out.println("Error! Invalid userName");
+            throw new UsernameNotFoundException("Error! UserName Not Found");
         }
 
         return new UserDetailsProvider(user);

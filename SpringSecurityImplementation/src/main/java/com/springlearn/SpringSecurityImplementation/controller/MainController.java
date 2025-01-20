@@ -1,8 +1,8 @@
 package com.springlearn.SpringSecurityImplementation.controller;
 
-import com.springlearn.SpringSecurityImplementation.config.SecurityConfig;
 import com.springlearn.SpringSecurityImplementation.model.UserCredentials;
-import com.springlearn.SpringSecurityImplementation.service.UserCredentialService;
+import com.springlearn.SpringSecurityImplementation.service.JwtService;
+import com.springlearn.SpringSecurityImplementation.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,32 +14,34 @@ import org.springframework.web.bind.annotation.*;
 public class MainController {
 
     @Autowired
-    AuthenticationManager authenticationManager;
+    UserService userService;
 
     @Autowired
-    UserCredentialService userService;
+    JwtService jwtService;
+
+    @Autowired
+    AuthenticationManager authenticationManager;
 
     @GetMapping("/")
     public String home(){
-        return "home called";
+        return "home page is here";
     }
 
     @PostMapping("register")
-    public String registerCredentials(@RequestBody UserCredentials users){
-        System.out.println("reached");
+    public String register(@RequestBody UserCredentials users){
         return userService.registerDetails(users);
     }
 
     @PostMapping("login")
-    public String Login(@RequestBody UserCredentials user){
+    public String login(@RequestBody UserCredentials users){
 
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(user.getName(), user.getPassword()));
+                new UsernamePasswordAuthenticationToken(users.getUserName(), users.getPassword()));
 
-        if(authentication.isAuthenticated())
-            return "Login Successfully";
+        if (authentication.isAuthenticated())
+            return jwtService.generateToken(users);
         else
-            return "Login Failed Successfully :) ";
+            return "Failed";
     }
 
 }

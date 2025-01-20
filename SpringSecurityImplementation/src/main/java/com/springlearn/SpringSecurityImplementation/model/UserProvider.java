@@ -1,35 +1,35 @@
 package com.springlearn.SpringSecurityImplementation.model;
 
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
-public class UserDetailsProvider implements UserDetails {
+@Component
+public class UserProvider implements UserDetails {
 
-    private UserCredentials users;
+    private UserCredentials user;
 
-    public UserDetailsProvider(UserCredentials user){
-        this.users = user;
+    public UserProvider(UserCredentials user){
+        this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("users"));
+        return Collections.singleton(new SimpleGrantedAuthority(user.getRole()));
     }
 
     @Override
     public String getPassword() {
-        return users.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return users.getName();
+        return user.getUserName();
     }
 
     @Override

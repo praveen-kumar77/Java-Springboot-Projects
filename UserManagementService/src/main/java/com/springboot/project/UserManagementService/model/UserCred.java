@@ -12,7 +12,7 @@ public class UserCred {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private int userId;
 
     private String username;
     private String password;
@@ -25,12 +25,12 @@ public class UserCred {
     private Date updatedAt;
 
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.userId = id;
     }
 
     public String getUsername() {

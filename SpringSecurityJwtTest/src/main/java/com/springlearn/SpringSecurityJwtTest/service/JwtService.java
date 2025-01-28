@@ -1,6 +1,5 @@
 package com.springlearn.SpringSecurityJwtTest.service;
 
-import com.springlearn.SpringSecurityJwtTest.model.UserCred;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

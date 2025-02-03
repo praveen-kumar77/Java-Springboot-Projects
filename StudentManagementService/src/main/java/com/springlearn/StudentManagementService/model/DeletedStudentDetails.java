@@ -8,22 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class StudentDetails {
+public class DeletedStudentDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "register_id")
     private int registerId;
 
     @Column(name = "student_name")
     private String studentName;
-
-    @OneToMany(mappedBy = "studId")
-    private List<EnrollmentDetails> studentEnrollmentsList;
-
-    @OneToOne(mappedBy = "studentId", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private UserCred user;
 
     @Column(name = "email_id")
     private String mailId;
@@ -58,14 +49,6 @@ public class StudentDetails {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    public List<EnrollmentDetails> getStudentEnrollmentsList() {
-        return studentEnrollmentsList;
-    }
-
-    public void setStudentEnrollmentsList(List<EnrollmentDetails> studentEnrollmentsList) {
-        this.studentEnrollmentsList = studentEnrollmentsList;
-    }
-
     public int getRegisterId() {
         return registerId;
     }
@@ -80,14 +63,6 @@ public class StudentDetails {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
-    }
-
-    public UserCred getUser() {
-        return user;
-    }
-
-    public void setUser(UserCred user) {
-        this.user = user;
     }
 
     public String getMailId() {

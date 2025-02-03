@@ -1,7 +1,5 @@
 package com.springlearn.StudentManagementService.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
@@ -10,12 +8,27 @@ import org.springframework.stereotype.Component;
 public class UserCred {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public int userId;
 
     private String userName;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private UserRole userRole;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    private StudentDetails studentId;
+
+
+    public StudentDetails getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(StudentDetails studentId) {
+        this.studentId = studentId;
+    }
 
     public int getUserId() {
         return userId;
@@ -48,4 +61,5 @@ public class UserCred {
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
     }
+
 }

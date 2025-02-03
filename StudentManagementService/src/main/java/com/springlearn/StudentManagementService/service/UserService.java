@@ -25,13 +25,10 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         UserCred user = repo.findByUserName(username);
-
         if(user == null){
             throw new UsernameNotFoundException("Error username not found");
         }
-
         return new UserProvider(user);
     }
 
@@ -41,5 +38,10 @@ public class UserService implements UserDetailsService {
 
     public UserCred updateUserDetails(UserCred user) {
         return repo.save(user);
+    }
+
+    public String deleteUser(int id) {
+        repo.deleteById(id);
+        return "Deleted";
     }
 }

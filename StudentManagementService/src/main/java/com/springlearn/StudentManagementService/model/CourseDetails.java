@@ -2,12 +2,11 @@ package com.springlearn.StudentManagementService.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
-@Component
 public class CourseDetails {
 
     @Id
@@ -15,46 +14,55 @@ public class CourseDetails {
     private int courseId;
     private String courseName;
     private String description;
-    private int credit;
+    private int duration;
+    private Date createdAt;
+    private Date updatedAt;
 
-    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "courseId")
+    @ManyToOne
     @JsonIgnore
-    private List<EnrollmentDetails> enrollmentDetails;
+    private TeacherDetails teacherId;
 
-    @ManyToMany(mappedBy = "courseDetails", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<StudentDetails> studentDetails;
+    @OneToMany(mappedBy = "courId")
+    private List<EnrollmentDetails> courseEnrollmentsList;
 
-    public List<StudentDetails> getStudentDetails() {
-        return studentDetails;
+    public TeacherDetails getTeacherId() {
+        return teacherId;
     }
 
-    public void setStudentDetails(List<StudentDetails> studentDetails) {
-        this.studentDetails = studentDetails;
+    public void setTeacherId(TeacherDetails teacherId) {
+        this.teacherId = teacherId;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public List<EnrollmentDetails> getCourseEnrollmentsList() {
+        return courseEnrollmentsList;
     }
 
-    public List<EnrollmentDetails> getEnrollmentDetails() {
-        return enrollmentDetails;
+    public void setCourseEnrollmentsList(List<EnrollmentDetails> courseEnrollmentsList) {
+        this.courseEnrollmentsList = courseEnrollmentsList;
     }
 
-    public void setEnrollmentDetails(List<EnrollmentDetails> enrollmentDetails) {
-        this.enrollmentDetails = enrollmentDetails;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public Date getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public String getDescription() {
@@ -65,13 +73,19 @@ public class CourseDetails {
         this.description = description;
     }
 
-    public int getCredit() {
-        return credit;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setCredit(int credit) {
-        this.credit = credit;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
+    public int getCourseId() {
+        return courseId;
+    }
 
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
 }

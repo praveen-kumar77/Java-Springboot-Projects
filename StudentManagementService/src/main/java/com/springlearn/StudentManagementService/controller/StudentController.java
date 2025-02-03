@@ -2,41 +2,35 @@ package com.springlearn.StudentManagementService.controller;
 
 import com.springlearn.StudentManagementService.model.StudentDetails;
 import com.springlearn.StudentManagementService.service.StudentService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/student")
+@Controller
+@RequestMapping("student")
 public class StudentController {
 
     @Autowired
-    StudentService studentService;
+    private StudentService studentService;
 
-    @PostMapping("/admin/add")
-    public String saveDetails(@RequestBody StudentDetails studentDetails){
-        return studentService.saveDetails(studentDetails);
+    @GetMapping("/std")
+    public String home(){
+        return "studentPage";
     }
 
-    @GetMapping("/admin/allStudents")
-    public List<StudentDetails> allStudents(){
-        return studentService.getAllStudents();
+    @GetMapping("getDetails")
+    public String getStudentDetails(){
+        return "studentPage";
     }
 
-    @GetMapping("{id}")
-    public StudentDetails getStudent(@PathVariable int id){
-        return studentService.getStudentById(id);
+    @PostMapping("getDetails")
+    public String getDetails(@RequestParam("id") int id, HttpServletRequest request){
+        return studentService.getDetailsById(id,request );
     }
 
-    @PutMapping("/admin/update")
-    public StudentDetails update(@RequestBody StudentDetails student){
-        return studentService.updateStudent(student);
-    }
 
-    @DeleteMapping("admin/delete/{id}")
-    public String delete(@PathVariable int id){
-        return studentService.deleteStudent(id);
-    }
 
 }

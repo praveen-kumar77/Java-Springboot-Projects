@@ -30,7 +30,9 @@ public class JwtService {
     public String generateSecretKey(){
         try{
             KeyGenerator keyGenerator = KeyGenerator.getInstance("hmacSHA256");
+            System.out.println("key generator " + keyGenerator.toString());
             SecretKey secretKey = keyGenerator.generateKey();
+            System.out.println("secret key "+ secretKey.toString());
             return Base64.getEncoder().encodeToString(secretKey.getEncoded());
         }catch (NoSuchAlgorithmException e){
             throw new RuntimeException("Error while finding algorithm go and set proper algorithm");

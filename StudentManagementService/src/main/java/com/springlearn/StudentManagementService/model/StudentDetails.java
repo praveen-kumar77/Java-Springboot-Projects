@@ -1,9 +1,10 @@
 package com.springlearn.StudentManagementService.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,19 +12,14 @@ import java.util.List;
 public class StudentDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "register_id")
-    private int registerId;
+    private String registerId;
 
     @Column(name = "student_name")
     private String studentName;
 
     @OneToMany(mappedBy = "studId")
-    private List<EnrollmentDetails> studentEnrollmentsList;
-
-    @OneToOne(mappedBy = "studentId", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private UserCred user;
+    private List<EnrollmentDetails> studentEnrollmentsList = new ArrayList<>();
 
     @Column(name = "email_id")
     private String mailId;
@@ -31,13 +27,13 @@ public class StudentDetails {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "year_of_study (in years)")
+    @Column(name = "semester")
     private int yearOfStudy;
 
     @Column(name = "year_of_admission")
     private String yearOfAdmission;
 
-    @Column(name = "course_duration (in years)")
+    @Column(name = "course_duration_years")
     private int courseDuration;
 
     @Column(name = "designation")
@@ -58,6 +54,7 @@ public class StudentDetails {
     @Column(name = "updated_at")
     private Date updatedAt;
 
+
     public List<EnrollmentDetails> getStudentEnrollmentsList() {
         return studentEnrollmentsList;
     }
@@ -66,11 +63,11 @@ public class StudentDetails {
         this.studentEnrollmentsList = studentEnrollmentsList;
     }
 
-    public int getRegisterId() {
+    public String getRegisterId() {
         return registerId;
     }
 
-    public void setRegisterId(int registerId) {
+    public void setRegisterId(String registerId) {
         this.registerId = registerId;
     }
 
@@ -80,14 +77,6 @@ public class StudentDetails {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
-    }
-
-    public UserCred getUser() {
-        return user;
-    }
-
-    public void setUser(UserCred user) {
-        this.user = user;
     }
 
     public String getMailId() {

@@ -40,8 +40,13 @@ public class HomeController {
         return "login";
     }
 
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
+
     @PostMapping("/register")
-    public UserCred register(@RequestBody UserCred userCred) {
+    public String register(@ModelAttribute UserCred userCred) {
         return userService.registerDetails(userCred);
     }
 

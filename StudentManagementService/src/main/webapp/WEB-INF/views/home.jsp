@@ -126,7 +126,7 @@
                 <h2>Admin</h2>
                 <p>Access administrative functions</p>
             </div>
-            <div class="card teacher" onclick="window.location.href='/student/std'">
+            <div class="card teacher" onclick="window.location.href='/teacher/home'">
                 <h2>Teacher</h2>
                 <p>Access teaching resources</p>
             </div>

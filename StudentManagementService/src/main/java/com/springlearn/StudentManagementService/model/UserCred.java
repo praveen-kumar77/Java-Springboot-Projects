@@ -8,35 +8,15 @@ import org.springframework.stereotype.Component;
 public class UserCred {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public int userId;
-
+    @Column(name = "user_name")
     private String userName;
+
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "user_role")
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
-    private StudentDetails studentId;
-
-
-    public StudentDetails getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(StudentDetails studentId) {
-        this.studentId = studentId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getUserName() {
         return userName;

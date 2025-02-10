@@ -16,7 +16,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @GetMapping("/std")
+    @GetMapping("/mainPage")
     public String home(){
         return "studentPage";
     }
@@ -27,7 +27,7 @@ public class StudentController {
     }
 
     @PostMapping("getDetails")
-    public String getDetails(@RequestParam("id") int id, HttpServletRequest request){
+    public String getDetails(@RequestParam("id") String id, HttpServletRequest request){
         return studentService.getDetailsById(id,request );
     }
 

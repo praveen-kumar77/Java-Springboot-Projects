@@ -12,10 +12,9 @@
             }
         }
     }
-
     // Redirect to login if not authorized
     if (!"STUDENT".equals(userRole)) {
-        response.sendRedirect("api/user/login");
+        response.sendRedirect("/api/user/login");
     }
 %>
 <!DOCTYPE html>
@@ -149,6 +148,7 @@
                     <td> <%= stud.getStudentName() %>
                 </tr>
                 <tr>
+
                     <td> Register Id </td>
                     <td> <%= stud.getRegisterId() %>
                 </tr>

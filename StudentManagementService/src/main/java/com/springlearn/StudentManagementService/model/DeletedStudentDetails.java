@@ -1,17 +1,15 @@
 package com.springlearn.StudentManagementService.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class DeletedStudentDetails {
 
     @Id
-    private int registerId;
+    private String registerId;
 
     @Column(name = "student_name")
     private String studentName;
@@ -49,11 +47,11 @@ public class DeletedStudentDetails {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    public int getRegisterId() {
+    public String getRegisterId() {
         return registerId;
     }
 
-    public void setRegisterId(int registerId) {
+    public void setRegisterId(String registerId) {
         this.registerId = registerId;
     }
 

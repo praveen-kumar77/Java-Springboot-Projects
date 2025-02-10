@@ -3,6 +3,7 @@ package com.springlearn.StudentManagementService.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -10,27 +11,38 @@ import java.util.List;
 public class CourseDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int courseId;
+    @Column(name = "course_id")
+    private String courseId;
+
+    @Column(name = "course_name")
     private String courseName;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "duration")
     private int duration;
-    private Date createdAt;
+
+    @Column(name = "created_at")
+    private LocalDate createdAt;
+
+    @Column(name = "updated_at")
     private Date updatedAt;
 
     @ManyToOne
+    @JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
     @JsonIgnore
-    private TeacherDetails teacherId;
+    private TeacherDetails teachersId;
 
     @OneToMany(mappedBy = "courId")
     private List<EnrollmentDetails> courseEnrollmentsList;
 
-    public TeacherDetails getTeacherId() {
-        return teacherId;
+    public TeacherDetails getTeachersId() {
+        return teachersId;
     }
 
-    public void setTeacherId(TeacherDetails teacherId) {
-        this.teacherId = teacherId;
+    public void setTeachersId(TeacherDetails teacherId) {
+        this.teachersId = teacherId;
     }
 
     public List<EnrollmentDetails> getCourseEnrollmentsList() {
@@ -41,11 +53,11 @@ public class CourseDetails {
         this.courseEnrollmentsList = courseEnrollmentsList;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -81,11 +93,12 @@ public class CourseDetails {
         this.courseName = courseName;
     }
 
-    public int getCourseId() {
+    public String  getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(String  courseId) {
         this.courseId = courseId;
     }
+
 }

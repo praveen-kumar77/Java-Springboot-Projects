@@ -18,9 +18,10 @@ public class UserService implements UserDetailsService {
 
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
-    public UserCred registerDetails(UserCred user){
+    public String registerDetails(UserCred user){
         user.setPassword(encoder.encode(user.getPassword()));
-        return repo.save(user);
+        repo.save(user);
+        return "redirect:/api/user/home";
     }
 
     @Override
@@ -32,7 +33,7 @@ public class UserService implements UserDetailsService {
         return new UserProvider(user);
     }
 
-    public UserCred getUserDetails(int id) {
+    public UserCred getUserDetails(String id) {
         return repo.findById(id).get();
     }
 
@@ -40,7 +41,7 @@ public class UserService implements UserDetailsService {
         return repo.save(user);
     }
 
-    public String deleteUser(int id) {
+    public String deleteUser(String id) {
         repo.deleteById(id);
         return "Deleted";
     }

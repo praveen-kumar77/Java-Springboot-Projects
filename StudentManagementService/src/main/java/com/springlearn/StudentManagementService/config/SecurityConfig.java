@@ -55,9 +55,9 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
-    @Bean
-    public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
-        System.out.println("called");
-        return new HiddenHttpMethodFilter();
-    }
+//    @Bean
+//    public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
+//        System.out.println("called");
+//        return new HiddenHttpMethodFilter();
+//    }
 }

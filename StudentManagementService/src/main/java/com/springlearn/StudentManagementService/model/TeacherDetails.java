@@ -9,25 +9,47 @@ import java.util.List;
 public class TeacherDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int TeacherId;
+    @Column(name = "teacher_id")
+    private String teacherId;
 
+    @Column(name = "teacher_name")
     private String name;
+
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "contact_no")
     private long contactNo;
+
+    @Column(name = "email_id")
     private String emailId;
+
+    @Column(name = "qualification")
     private String qualification;
+
+    @Column(name = "joined_at")
     private LocalDate joinedAt;
 
-    @OneToMany(mappedBy = "teacherId")
+    @Column(name = "date_of_birth")
+    private LocalDate dateOfBirth;
+
+    @OneToMany(mappedBy = "teachersId")
     private List<CourseDetails> courseHandling;
 
-    public int getTeacherId() {
-        return TeacherId;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setTeacherId(int teacherId) {
-        TeacherId = teacherId;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
     }
 
     public String getName() {

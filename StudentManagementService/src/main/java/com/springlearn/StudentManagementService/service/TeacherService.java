@@ -29,8 +29,8 @@ public class TeacherService {
     public String userNameGenerator(TeacherDetails teacher){
         Random random = new Random();
         int randomNum = random.nextInt(999);
-        String[] studentName = teacher.getName().split(" ");
-        String name = studentName[0] + "@" + randomNum;
+        String[] teacherName = teacher.getName().split(" ");
+        String name = teacherName[0] + "@" + randomNum;
         if(userRepo.findByUserName(name) != null)
         {
             return userNameGenerator(teacher);
@@ -82,6 +82,7 @@ public class TeacherService {
 
     public String generateTeacherId() {
         Long sequenceValue = teacherRepo.getNextTeacherIdSequence();
-        return String.format("SMST25%03d", sequenceValue);
+        return String.format("SMST%03d", sequenceValue);
     }
+
 }

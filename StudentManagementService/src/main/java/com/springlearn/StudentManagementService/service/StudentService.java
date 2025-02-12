@@ -111,10 +111,9 @@ public class StudentService {
     }
 
 
-    public String getDetailsById(String id, HttpServletRequest request) {
+    public StudentDetails getDetailsById(String id) {
         StudentDetails details = studentRepo.findById(id).get();
-        request.setAttribute("student", details);
-        return "studentPage";
+        return details;
     }
 
 

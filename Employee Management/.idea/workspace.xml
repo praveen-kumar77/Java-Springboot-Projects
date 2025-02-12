@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5294fd7c-6845-4278-97aa-59a5dae641ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../MappingTest/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MappingTest/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/DeletedStudentDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/TeacherDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/DeletedStudentRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/TeacherRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/webapp/WEB-INF/views/adminPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/webapp/WEB-INF/views/studentPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/webapp/WEB-INF/views/teachersPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MappingTest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MappingTest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MappingTest/src/main/java/com/springlearn/MappingTest/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MappingTest/src/main/java/com/springlearn/MappingTest/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MappingTest/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../MappingTest/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/CourseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/EnrollmentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/CourseDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/CourseDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/EnrollmentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/EnrollmentDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/EnrollmentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/EnrollmentStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/StudentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/StudentDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/UserCred.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/UserCred.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/model/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/CourseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/CourseRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/EnrollmentRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/StudentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/StudentRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/EnrollmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/java/com/springlearn/StudentManagementService/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StudentManagementService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../StudentManagementService/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2nc7OJk8sprlotAGuI1qiFNMcOD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.StudentDetailsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/github/StudentDetails&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.springlearn.StudentDetails" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\StudentDetails\src\main\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\StudentDetails\src\main\java\com\springlearn\StudentDetails\repo" />
+      <recent name="D:\Java\StudentDetails\src\main\java\com\springlearn\StudentDetails\model" />
+      <recent name="D:\Java\StudentDetails\src\main\java\com\springlearn\StudentDetails\controller" />
+      <recent name="D:\Java\StudentDetails\src\main\webapp" />
+      <recent name="D:\Java\StudentDetails\src\main\webapp\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="StudentDetailsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springlearn.StudentDetails.StudentDetailsApplication" />
+      <module name="StudentDetails" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springlearn.StudentDetails.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StudentDetailsApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5294fd7c-6845-4278-97aa-59a5dae641ff" name="Changes" comment="" />
+      <created>1729260480855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729260480855</updated>
+    </task>
+    <servers />
+  </component>
+</project>

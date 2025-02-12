@@ -27,8 +27,9 @@ public class StudentController {
     }
 
     @PostMapping("getDetails")
-    public String getDetails(@RequestParam("id") String id, HttpServletRequest request){
-        return studentService.getDetailsById(id,request );
+    @ResponseBody
+    public StudentDetails getDetails(@RequestParam("id") String id){
+        return studentService.getDetailsById(id);
     }
 
 

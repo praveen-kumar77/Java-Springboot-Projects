@@ -130,7 +130,7 @@
                 <h2>Teacher</h2>
                 <p>Access teaching resources</p>
             </div>
-            <div class="card student" onclick="window.location.href='/student/std'">
+            <div class="card student" onclick="window.location.href='/student/mainPage'">
                 <h2>Student</h2>
                 <p>Access student portal</p>
             </div>

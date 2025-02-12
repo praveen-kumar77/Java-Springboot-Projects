@@ -4,9 +4,10 @@ import com.springlearn.MappingTest.model.Department;
 import com.springlearn.MappingTest.model.Employee;
 import com.springlearn.MappingTest.model.EmployeeDetails;
 import com.springlearn.MappingTest.service.MappingService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class MainController {
 
     private MappingService service;
@@ -15,10 +16,11 @@ public class MainController {
         this.service = service;
     }
 
-    @GetMapping("home")
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(){
         return "home";
     }
+
     @PostMapping("empPost")
     public Employee empDetails(@RequestBody Employee employee){
         return service.saveDetails(employee);

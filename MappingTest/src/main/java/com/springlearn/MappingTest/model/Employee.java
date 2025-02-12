@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Component
 @Table(name = "emp_Table")
+
 public class Employee {
 
     @Id
@@ -22,9 +23,7 @@ public class Employee {
     @JsonIgnore
     private List<EmployeeDetails> employeeDetails;
 
-
     //Getters And Setters
-
 
     public int getEmpId() {
         return empId;

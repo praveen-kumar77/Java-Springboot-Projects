@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.springlearn.StudentManagementService.model.StudentDetails" %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <%
     // Check if the user has the correct role
     String userRole = null;
@@ -27,7 +29,8 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
         }
 
         /* Container for the page */
@@ -39,7 +42,7 @@
         /* Left Menu Bar */
         .left-menu {
             width: 250px; /* Fixed width for the menu */
-            background-color: #2c3e50; /* Dark background color */
+            background-color: #343a40; /* Dark background color */
             color: white;
             overflow-y: auto; /* Make the menu scrollable */
             height: 100vh; /* Full height of the viewport */
@@ -50,8 +53,10 @@
         .left-menu h2 {
             padding: 20px;
             margin: 0;
-            background-color: #34495e; /* Slightly darker background for header */
+            background-color: #2c3e50; /* Slightly darker background for header */
             text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         /* Menu Buttons */
@@ -65,54 +70,112 @@
             color: white;
             text-align: left;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, padding-left 0.3s;
+            font-size: 1rem;
         }
 
         /* Hover effect for buttons */
         .left-menu button:hover {
-            background-color: #1abc9c; /* Highlight color on hover */
+            background-color: #495057; /* Highlight color on hover */
+            padding-left: 25px;
         }
 
         /* Right Content Area */
         .right-content {
             flex: 1; /* Take remaining space */
-            padding: 20px;
-            background-color: #f4f4f4; /* Light background for content */
+            padding: 30px;
+            background-color: #ffffff; /* White background for content */
             overflow-y: auto; /* Make content scrollable */
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
         }
 
-         table {
-                width: 50%;
-                border-collapse: collapse;
-                margin-top: 20px;
-                }
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
+
         th {
-            background-color: #f2f2f2;
-            column-span: 2;
+            background-color: #f8f9fa;
+            font-weight: 600;
         }
 
-        /* Example content styling */
+        /* Form Styling */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Heading Styling */
         .right-content h2 {
-            color: #2c3e50;
+            color: #343a40;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
+        /* Paragraph Styling */
         .right-content p {
-            color: #333;
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Logout Button Styling */
+        .logout-btn {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
 <body>
     <div class="container">
-
-
-    <%
-        StudentDetails stud = (StudentDetails) request.getAttribute("student");
-    %>
 
         <!-- Left Menu Bar -->
         <div class="left-menu">
@@ -126,69 +189,81 @@
 
         <!-- Right Content Area -->
         <div class="right-content" id="right-content">
-            <form action= "getDetails" method = "POST">
-                <label><h4> Enter Student Id </h4></label>
-                <input type="text" id= "id" name= "id">
-                <input type= "submit" value= "submit">
-            </form>
+            <h2>Welcome to Student Operations</h2>
+            <p>Please select an operation from the left menu.</p>
         </div>
+
     </div>
 
     <script>
-        // JavaScript functions to update the right content
+        //-------------------------------- Show Student Details ----------------------------------------------
         function showStudentDetails() {
             document.getElementById("right-content").innerHTML = `
-            <% if(stud == null) { %>
-                   <p> Student not found </p>
-            <% } else { %>
-                <table>
-                <th> Personal info </th>
-                <tr>
-                    <td> Name </td>
-                    <td> <%= stud.getStudentName() %>
-                </tr>
-                <tr>
-
-                    <td> Register Id </td>
-                    <td> <%= stud.getRegisterId() %>
-                </tr>
-                <tr>
-                    <td> Email Id </td>
-                    <td> <%= stud.getMailId() %>
-                </tr>
-                <tr>
-                      <td> Address </td>
-                      <td> <%= stud.getAddress() %>
-                </tr>
-                <tr>
-                    <td> Current Year </td>
-                    <td> <%= stud.getYearOfStudy() %>
-                </tr>
-                <tr>
-                    <td> Year of Admission </td>
-                    <td> <%= stud.getYearOfAdmission() %>
-                </tr>
-                <tr>
-                    <td> Designation </td>
-                    <td> <%= stud.getDesignation() %>
-                </tr>
-                <tr>
-                    <td> Course Duration </td>
-                    <td> <%= stud.getCourseDuration() %>
-                </tr>
-                <tr>
-                    <td> Date Of Birth </td>
-                    <td> <%= stud.getDateOfBirth() %>
-                </tr>
-                <tr>
-                      <td> Phone no </td>
-                      <td> <%= stud.getPhone() %>
-                </tr>
-
-                </table>
-
-               <% } %>
+                <form onsubmit="return showStudent()">
+                    <label><h4>Enter Student Id</h4></label>
+                    <input type="text" id="id" name="id" required>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="studentsTableContainer"></div>
             `;
+        }
+
+        function showStudent() {
+            const studentId = document.getElementById("id").value;
+
+            $.ajax({
+                url: "getDetails",
+                type: "POST",
+                data: { id: studentId },
+                success: function(response) {
+                    const student = response;
+                    console.log(student);
+                    const container = document.getElementById("studentsTableContainer");
+                    container.innerHTML = ""; // Clear previous data
+
+                    const table = document.createElement("table");
+                    table.border = "1";
+
+                    // Table Body for Vertical Layout
+                    const tbody = document.createElement("tbody");
+
+                    const fields = {
+                        "Register Id": student.registerId,
+                        "Name": student.studentName,
+                        "Email ID": student.mailId,
+                        "Address": student.address,
+                        "Current Year": student.yearOfStudy,
+                        "Year Of Admission": student.yearOfAdmission,
+                        "Course Duration": student.courseDuration,
+                        "Designation": student.designation,
+                        "Date Of Birth": student.dateOfBirth,
+                        "Phone": student.phone
+                    };
+
+                    Object.entries(fields).forEach(([key, value]) => {
+                        const row = document.createElement("tr");
+
+                        const th = document.createElement("th");
+                        th.textContent = key;
+                        row.appendChild(th);
+
+                        const td = document.createElement("td");
+                        td.textContent = value || "N/A";
+                        row.appendChild(td);
+
+                        tbody.appendChild(row);
+                    });
+
+                    table.appendChild(tbody);
+                    container.appendChild(table);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching students list:", error);
+                    alert("Error fetching students list");
+                }
+            });
+
+            return false; // Prevent form submission
         }
 
         function showUpdateForm() {
@@ -215,6 +290,7 @@
             document.getElementById("right-content").innerHTML = `
                 <h2>Logout</h2>
                 <p>You have been logged out.</p>
+                <button class="logout-btn" onclick="window.location.href='/api/user/login'">Login Again</button>
             `;
         }
     </script>

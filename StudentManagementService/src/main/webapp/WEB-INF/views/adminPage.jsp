@@ -17,7 +17,7 @@
 
         // Redirect to login if not authorized
         if (!"ADMIN".equals(userRole)) {
-            response.sendRedirect("api/user/login");
+            response.sendRedirect("/api/user/login");
         }
     %>
     <!DOCTYPE html>
@@ -544,6 +544,9 @@
 
                 <label for="emailId">Email ID:</label>
                 <input type="email" id="emailId" name="emailId" required>
+
+                <label for="dateOfBirth">Date Of Birth:</label>
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
 
                 <label for="qualification">Qualification:</label>
                 <input type="text" id="qualification" name="qualification" required>
